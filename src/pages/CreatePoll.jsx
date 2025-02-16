@@ -17,7 +17,7 @@ const CreatePoll = () => {
 
   const handleCreate = async () => {
 
-    const resp = await axios.post("http://localhost:8080/api/create", { question, options });
+    const resp = await axios.post("https://poll-now-be.vercel.app/api/create", { question, options });
     if(resp.status == 201){
       setQuestion("");
       setOptions(["",""])

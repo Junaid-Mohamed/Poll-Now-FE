@@ -6,7 +6,7 @@ const ListPoll = () => {
 
   useEffect(() => {
     const fetchPolls = async () => {
-      const response = await axios.get("http://localhost:8080/api/polls");
+      const response = await axios.get("https://poll-now-be.vercel.app/api/polls");
       setPolls(response.data);
     };
 

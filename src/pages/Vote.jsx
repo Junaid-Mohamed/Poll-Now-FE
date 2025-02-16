@@ -7,7 +7,7 @@ const Vote = () => {
 
   useEffect(() => {
     const fetchPolls = async () => {
-      const response = await axios.get("http://localhost:8080/api/polls");
+      const response = await axios.get("https://poll-now-be.vercel.app/api/polls");
       setPolls(response.data);
     };
 
@@ -25,7 +25,7 @@ const Vote = () => {
   // Submit all votes in one API call
   const handleSubmitVotes = async () => {
     try {
-      await axios.post("http://localhost:8080/api/vote", { votes: selectedOptions });
+      await axios.post("https://poll-now-be.vercel.app/api/vote", { votes: selectedOptions });
       alert("Votes submitted successfully!");
     } catch (error) {
       console.error("Error submitting votes:", error);
