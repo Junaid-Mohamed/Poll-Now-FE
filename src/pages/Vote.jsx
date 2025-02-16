@@ -25,6 +25,10 @@ const Vote = () => {
   // Submit all votes in one API call
   const handleSubmitVotes = async () => {
     try {
+        if(polls.length !== Object.keys(selectedOptions).length){
+            alert("please vote all the polls to submit!!")
+            return;
+        }
       await axios.post("https://poll-now-be.vercel.app/api/vote", { votes: selectedOptions });
       alert("Votes submitted successfully!");
     } catch (error) {
